@@ -1,17 +1,30 @@
-const isOnline=true;
-const Contact = ()=>{
-    return (
-        <div className="Contact">
-            <img src="https://randomuser.me/api/portraits/lego/3.jpg" alt="avatar"/>
-            <div className="name">
-                <p>Wilders Lego</p>
-                <h5 className="status">
-                    {
-                        isOnline?<p className="status-online">.  <o className="online">online</o></p> : <p className="status-offline">. <off className="offline">offline</off></p>
-                    }
-                </h5>
-                </div>
-            </div>
-    )
+import PropTypes from 'prop-types';
+import "./Contact.css";
+
+
+function Contact({ isOnline,name,image }) {
+  return (
+    <div className="Contact">
+      <img
+        className="avatar"
+        src={image}
+        alt="avatar"
+      />
+      <div>
+        <div className="name">{name}</div>
+        <div className="status">
+          <div className={isOnline ? "status-online" : "status-offline"}></div>
+          <div className="status-text">{isOnline ? "online" : "offline"}</div>
+        </div>
+      </div>
+    </div>
+  );
 }
+
 export default Contact;
+Contact.propsTypes={
+    name:PropTypes.string.isRequired,
+    isOnline:PropTypes.bool.isRequired,
+    image:PropTypes.element.isRequired,
+
+}
