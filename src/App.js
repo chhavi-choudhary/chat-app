@@ -1,13 +1,39 @@
 import Contact from './components/Contact'
+import ContactList from './components/ContactList'
 import './App.css';
 
+const users = [
+  {
+    name: 'Robert Reyes',
+    avatar: 'https://randomuser.me/api/portraits/men/28.jpg',
+    online: false
+  },
+  {
+    name: 'Nellie Caldwell',
+    avatar: 'https://randomuser.me/api/portraits/women/17.jpg',
+    online: true
+  },
+  {
+    name: 'Vernon Mason',
+    avatar: 'https://randomuser.me/api/portraits/men/84.jpg',
+    online: true
+  },
+  {
+    name: 'Erica Hunt',
+    avatar: 'https://randomuser.me/api/portraits/women/87.jpg',
+    online: false
+  },
+  {
+    name: 'Juanita Phillips',
+    avatar: 'https://randomuser.me/api/portraits/women/55.jpg',
+    online: true
+  }
+];
 
 function App() {
   return (
     <div className="chat-app">
-     <Contact name="Wilders Lego 1" image="https://randomuser.me/api/portraits/lego/8.jpg" isOnline/>
-     <Contact  name="Wilders Lego2" image="https://randomuser.me/api/portraits/lego/2.jpg" />
-     <Contact  name="Wilders Lego3" image="https://randomuser.me/api/portraits/lego/0.jpg"isOnline/>
+     <ContactList users={users}/>
     </div>
   );
 }
